@@ -7,10 +7,10 @@
 
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "HeaderFiles\stb_image_write.h"
+#include "stb_image_write.h"
 #define STB_IMAGE_IMPLEMENTATION
-#include "HeaderFiles\stb_image.h"
-#include "HeaderFiles\geometry.h"
+#include "stb_image.h"
+#include "geometry.h"
 
 
 /*Some points to remember
