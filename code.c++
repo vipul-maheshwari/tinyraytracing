@@ -272,25 +272,11 @@ void render(const std::vector<Sphere> &spheres, const std::vector<Light> &lights
     #pragma omp parallel for
     for (size_t j = 0; j<height; j++) {
         for (size_t i = 0; i<width; i++) {
-            //tan(field of view / 2) = (screen width) * 0.5 / (screen-camera distance).
-            //Add the screen aspect ratio to the computations and you will find exactly the formulas for the ray direction. i.e width/(float)height
-            /*
-            Now let us say that we want to cast a vector through the center of the 12th pixel of the screen, i.e. 
-            we want to compute the blue vector. How can we do that? What is the distance from the left of the screen to the 
-            tip of the blue vector? First of all, it is 12+0.5 pixels. We know that 16 pixels of the screen correspond to 2 * tan(fov/2) 
-            world units. Thus, tip of the vector is located at (12+0.5)/16 * 2*tan(fov/2) world units from the left edge, 
-            or at the distance of (12+0.5) * 2/16 * tan(fov/2) - tan(fov/2) from the intersection between the screen and the -z axis. 
-            Add the screen aspect ratio to the computations and you will find exactly the formulas for the ray direction.
-            */
-            // float x =  (2*(i + 0.5)/(float)width  - 1)*tan(fov/2.)*width/(float)height;
-            // float y =  (2*(j + 0.5)/(float)height - 1)*tan(fov/2.);
 
             //Spheres are at constant position for the space, the main thing is the creationg of the view ray.
             //If you change the denominator let's say increase the number from 2 to 4 then 
             //then you are moving your view ray source towards right ( +ve x axis as dir_X will be more positive)
             //( less aligned to the viewing space) and vice versa. (Make some changes in the dir_x by changing the denominator)
-
-
 
             float dir_x =  (i + 0.5) -  width/2.;
             float dir_y = -(j + 0.5) + height/2.;    // this flips the image at the same time
@@ -304,16 +290,17 @@ void render(const std::vector<Sphere> &spheres, const std::vector<Light> &lights
             //framebuffer[i+j*width] = cast_ray(Vec3f(0,0,0), dir, spheres, lights);
         }
     }
-
-    std::ofstream ofs; // save the framebuffer to file
-    ofs.open("./out.ppm", std::ios::binary);
-    ofs << "P6\n" << width << " " << height << "\n255\n";
-    for (Vec3f &c : framebuffer) {
+    
+    std::vector<unsigned char> pixmap(width*height*3);
+    for (size_t i = 0; i < height*width; ++i) {
+        Vec3f &c = framebuffer[i];
         float max = std::max(c[0], std::max(c[1], c[2]));
         if (max>1) c = c*(1./max);
-        ofs << (char)(255 * c[0]) << (char)(255 * c[1]) << (char)(255 * c[2]);
+        for (size_t j = 0; j<3; j++) {
+            pixmap[i*3+j] = (unsigned char)(255 * std::max(0.f, std::min(1.f, framebuffer[i][j])));
+        }
     }
-    ofs.close();
+    stbi_write_jpg("out.jpg", width, height, 3, pixmap.data(), 100);
 }
 
 int main() {
