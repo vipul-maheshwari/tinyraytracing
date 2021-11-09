@@ -6,5 +6,7 @@ Output Image
 
 
 
+*Using the understanding of how 3d rendering works, I have created a simple ray tracing example
+
 This tinyraytracer project is based on the teachings of [sslov](https://github.com/ssloy/tinyraytracer/).
 The code is changed so the background image is different.
