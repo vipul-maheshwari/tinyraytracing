@@ -7,7 +7,7 @@ Essentially, an algorithm is used which can trace the path of light, and then si
 The final output is a rendered image of the virtual world. Here it is...
 ![out](/out.jpg)
 
-***Note: This whole project wouldn't be possible if it wasnt' for [sslov](https://github.com/ssloy/tinyraytracer/). It makes no sense just to look at the code, copy it and paste it for the completion of the project. Cheers and happy rendring!***
+***Note: This whole project wouldn't be possible if it wasnt' for [sslov](https://github.com/ssloy/tinyraytracer/). It makes no sense just to look at the code, copy it and paste it for the completion of the project. I made this whole project just because of his amazing Cheers and happy rendring!***
 
 ------------------------------
 
