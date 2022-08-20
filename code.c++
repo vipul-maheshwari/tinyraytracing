@@ -15,7 +15,7 @@
 
 /*Some points to remember
 #Reading the wiki is must to understand this project
-1. For every new property, we are creating a new structure having that property details i.e Material color or lighting
+1. For every new property, we are creating a new structure having that property details i.e Material color or lighting details
 2. normalize() normalize the vector [unit vector]
 3. The diffuse term is not affected by the viewer direction (V (cap)). The specular term is large only 
 when the viewer direction (V (cap)) is aligned with the reflection direction (R(cap)) 
