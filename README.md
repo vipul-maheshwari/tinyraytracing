@@ -1,5 +1,6 @@
 # Understandable RayTracing in 333 lines of C++ code
 
+<<<<<<< HEAD
 Ray tracing is an advanced and lifelike process of rendering light and shadows in a scene using the advanced mathematical gemeotry. This technique is vividly used for creating the artifical environments for Games and CG Work for movies. However, because ray tracing works by simulating and tracking every ray of light produced by a source of lighting, it kind of takes a lot of horsepower to actually render the scenes.
 
 Essentially, an algorithm is used which can trace the path of light, and then simulate the way that the light interacts with the virtual objects when it ultimately hits in the computer-generated world. In this project I have used the ray tracing algorithm created using C++ and pre-made image libraries to simulate the way that a light source interacts with the virtual world. If you are more interested in the mathematical theory behind ray tracing, you can read more about it [here](https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing/ray-tracing-practical-example)
@@ -59,4 +60,10 @@ Warning: my code is full of bugs, I fix them in the upstream, but older commits 
 
 So, the goal of this step is to make sure that we can a) create an image in memory + assign different colors and b) save the result to disk. Then you can view it in a third-party software. Here is the result:
 
-![prototype]()
+![prototype](/prototype.jpg)
+
+Output Image
+
+![out](https://user-images.githubusercontent.com/86592569/138553600-1beee55d-3ee1-4bad-9fe1-4578f1b36189.jpg)
+This tinyraytracer project is based on the teachings of [sslov](https://github.com/ssloy/tinyraytracer/).
+>>>>>>> efa2ab73a900ef6794dc5f19092fa98ffd070058
