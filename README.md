@@ -2,7 +2,7 @@
 
 Ray tracing is an advanced and lifelike process of rendering light and shadows in a scene using the advanced mathematical gemeotry. This technique is vividly used for creating the artifical environments for Games and CG Work for movies. However, because ray tracing works by simulating and tracking every ray of light produced by a source of lighting, it kind of takes a lot of horsepower to actually render the scenes.
 
-Essentially, an algorithm is used which can trace the path of light, and then simulate the way that the light interacts with the virtual objects when it ultimately hits in the computer-generated world. In this project I have used the ray tracing algorithm created using C++ and pre-made image libraries to simulate the way that a light source interacts with the virtual world. If you are more interested in the mathematical theory behind ray tracing, you can read more about it [here](https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing/ray-tracing-practical-example)
+Essentially, an algorithm is used which can trace the path of light, and then simulate the way that the light interacts with the virtual objects when it ultimately hits in the computer-generated world. In this project I have used the ray tracing algorithm created using C++ and pre-made image libraries to simulate the way that a light source interacts with the virtual world. If you are more interested in the mathematical theory behind ray tracing, you can read more about it [here](https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing/how-does-it-work)
 
 The final output is a rendered image of the virtual world. Here it is...
 ![out](/out.jpg)
